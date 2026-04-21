@@ -20,13 +20,10 @@ Emprendimiento de Pagina Web para Gabrielle
  R: Contactos:
 
 6.  Integrantes del grupo con sus respectivos roles
- R: Bastian Toledo: se encargo de 
- Header / Navegación 
- Hero / Banner principal
 
-Sederik Olmos: se encargo de
-Sobre nosotros
-Servicios / Productos
+R: Bastian Toledo: se encargo Principalmente del HTML y ayuda en el style .CSS
+
+Sederik Olmos: se encargo de Principalmente del .CSS y ayuda en el HTML
 
 Nicolas Espinoza: se encargo de
 Contacto / Footer
