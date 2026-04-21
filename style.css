@@ -6,86 +6,87 @@
     --texto-principal: #1a1a1a;
 }
 
+/* --- ESTILOS BASE --- */
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: hsl(277 73 88);
-    color: var(--texto-principal);
-    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif; /* Fuente principal del sitio */
+    margin: 0; /* Elimina espacios externos predeterminados del navegador */
+    padding: 0; /* Elimina espacios internos */
+    background-color: hsl(277 73 88); /* Color de fondo general (Lila) */
+    color: var(--texto-principal); /* Color de texto usando la variable */
+    overflow-x: hidden; /* Evita que aparezca una barra de desplazamiento horizontal */
 }
 
-
+/* --- NAVEGACIÓN (MENÚ) --- */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 8%;
-    background-color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    display: flex; /* Activa el modo flexible para alinear elementos */
+    justify-content: space-between; /* Pone el logo a un lado y el menú al otro */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 25px 8%; /* Espaciado interno: arriba/abajo y laterales */
+    background-color: white; /* Fondo blanco para resaltar */
+    position: sticky; /* Se queda pegado arriba al hacer scroll */
+    top: 0; /* Posición inicial del pegado */
+    z-index: 1000; /* Asegura que el menú siempre esté por encima de todo */
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Línea sutil divisoria abajo */
 }
 
 .nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+    display: flex; /* Alinea los links en fila */
+    gap: 35px; /* Espacio entre cada link */
+    list-style: none; /* Quita los puntos de la lista */
+    font-size: 0.9rem; /* Tamaño de letra */
+    font-weight: 600; /* Grosor de letra (seminegrita) */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 1.5px; /* Separación entre letras */
 }
 
 .nav-links a {
-    text-decoration: none;
-    color: var(--texto-principal);
-    transition: 0.3s;
+    text-decoration: none; /* Quita el subrayado de los links */
+    color: var(--texto-principal); /* Color inicial */
+    transition: 0.3s; /* Tiempo que tarda el cambio de color al pasar el mouse */
 }
 
 .nav-links a:hover {
-    color: var(--rosa-fuerte);
+    color: var(--rosa-fuerte); /* Cambia de color al pasar el cursor */
 }
 
-/* --- SECCIÓN HERO (TAMAÑO MAX) --- */
+/* --- SECCIÓN HERO (PORTADA) --- */
 .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 90vh; 
-    align-items: stretch;
+    display: grid; /* Divide la pantalla en una cuadrícula */
+    grid-template-columns: 1fr 1fr; /* Crea dos columnas iguales */
+    min-height: 90vh; /* Altura mínima del 90% de la pantalla */
+    align-items: stretch; /* Estira el contenido para llenar la altura */
 }
 
 .hero-image {
-    background-color: var(--rosa-fondo-logo);
+    background-color: var(--rosa-fondo-logo); /* Fondo rosado para la imagen */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
     padding: 60px;
-        }
+}
 
 .hero-image img {
-    width: 85%;
-    max-width: 650px; 
-    height: auto;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
-    animation: heroSlide 1.5s ease-out;
+    width: 85%; /* Ancho relativo al contenedor */
+    max-width: 650px; /* Tamaño máximo para que no se deforme */
+    height: auto; /* Mantiene la proporción */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05)); /* Sombra suave a la imagen */
+    animation: heroSlide 1.5s ease-out; /* Aplica la animación de entrada */
 }
 
 .hero-text {
     padding: 100px 10%; 
-    background-color: var(--menta-fondo-texto);
+    background-color: var(--menta-fondo-texto); /* Fondo color menta */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column; /* Alinea los textos uno debajo del otro */
+    justify-content: center; /* Centra el bloque de texto verticalmente */
 }
 
 .hero-text h1 {
-    font-family: 'Shrikhand', cursive;
+    font-family: 'Shrikhand', cursive; /* Fuente decorativa */
     color: var(--rosa-fuerte);
     font-size: 4.5rem; 
-    margin: 0 0 20px 0;
-    line-height: 1;
+    margin: 0 0 20px 0; /* Espaciado inferior */
+    line-height: 1; /* Espacio entre líneas apretado */
 }
 
 .hero-text h2 {
@@ -98,24 +99,24 @@ nav {
 
 .hero-text p {
     font-size: 1.2rem;
-   line-height: 1.8;
+    line-height: 1.8; /* Mayor espacio entre líneas para lectura fácil */
     color: #444;
     margin-bottom: 50px;
     max-width: 600px;
 }
 
 /* --- BOTONES --- */
-    .btn-group {
+.btn-group {
     display: flex;
-    gap: 25px;
+    gap: 25px; /* Espacio entre los dos botones */
 }
 
 .btn {
-    padding: 18px 45px;
+    padding: 18px 45px; /* Tamaño del botón */
     text-decoration: none;
     font-weight: 700;
-    border-radius: 4px;
-    transition: all 0.4s ease;
+    border-radius: 4px; /* Bordes ligeramente redondeados */
+    transition: all 0.4s ease; /* Suaviza todos los cambios (color, movimiento) */
     text-transform: uppercase;
     font-size: 0.95rem;
     letter-spacing: 1px;
@@ -129,9 +130,9 @@ nav {
 }
 
 .btn-primary:hover {
-    background-color: transparent;
-    color: var(--coral-boton);
-    transform: translateY(-5px);
+    background-color: transparent; /* Fondo transparente al pasar el mouse */
+    color: var(--coral-boton); /* Letras cambian al color del borde */
+    transform: translateY(-5px); /* El botón sube 5 píxeles */
 }
 
 .btn-secondary {
@@ -142,10 +143,10 @@ nav {
 .btn-secondary:hover {
     background-color: var(--coral-boton);
     color: white;
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efecto de elevación */
 }
 
-        /* --- SECCIÓN DE LOGOS --- */
+/* --- SECCIÓN DE LOGOS (PARTNERS) --- */
 .partners {
     padding: 100px 8%;
     background-color: white;
@@ -157,7 +158,6 @@ nav {
     color: #4db6ac; 
     font-size: 2.2rem;
     margin-bottom: 60px;
-    letter-spacing: 1px;
 }
 
 .partners-grid {
@@ -165,51 +165,52 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 60px; 
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Permite que los logos bajen si no caben */
 }
 
 .partners-grid img {
     max-width: 180px; 
     max-height: 90px; 
-    object-fit: contain;
-    filter: grayscale(100%) opacity(0.6); 
+    object-fit: contain; /* Ajusta la imagen sin deformarla */
+    filter: grayscale(100%) opacity(0.6); /* Logos en gris y semitransparentes */
     transition: all 0.4s ease;
     cursor: pointer;
-    /* Elimina el fondo blanco de los JPGs sobre fondo blanco */
-    mix-blend-mode: multiply; 
+    mix-blend-mode: multiply; /* Ayuda a que el fondo blanco de imágenes JPG desaparezca */
 }
 
 .partners-grid img:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.1);
+    filter: grayscale(0%) opacity(1); /* Vuelve al color original al pasar el mouse */
+    transform: scale(1.1); /* Agranda el logo un 10% */
 }
 
-/* Animaciones */
+/* --- ANIMACIONES --- */
 @keyframes heroSlide {
-    from { opacity: 0; transform: translateX(-30px); }
-         to { opacity: 1; transform: translateX(0); }
+    from { opacity: 0; transform: translateX(-30px); } /* Empieza invisible y a la izquierda */
+    to { opacity: 1; transform: translateX(0); } /* Termina visible en su lugar */
 }
 
-        /* Responsive */
+/* --- RESPONSIVE (CELULARES/TABLETS) --- */
 @media (max-width: 1100px) {
-        .hero { grid-template-columns: 1fr; }
-        .hero-text { text-align: center; padding: 80px 5%; align-items: center; }
-        .hero-text h1 { font-size: 3.5rem; }
-        .btn-group { flex-direction: column; width: 100%; }
-        .btn { width: 100%; box-sizing: border-box; }
-        }
+    .hero { grid-template-columns: 1fr; } /* Pasa de 2 columnas a 1 sola */
+    .hero-text { text-align: center; padding: 80px 5%; align-items: center; }
+    .hero-text h1 { font-size: 3.5rem; } /* Achica el texto en pantallas pequeñas */
+    .btn-group { flex-direction: column; width: 100%; } /* Botones uno sobre otro */
+    .btn { width: 100%; box-sizing: border-box; }
+}
 
-main{ 
-    background-color: hsl(277 73 88)}
+/* --- SECCIONES EXTRA --- */
+main { 
+    background-color: hsl(277 73 88); 
+}
 
-.Historia,.mision {
+.Historia, .mision {
     font-size: 18px;
     background-color: var(--rosa-fondo-logo); 
-    border-radius: 24px;
+    border-radius: 24px; /* Bordes muy redondeados */
     padding: 2rem;
-    margin: 2rem auto;
-    max-width: 900px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    margin: 2rem auto; /* Centra el bloque horizontalmente */
+    max-width: 900px; /* No permite que el texto se estire demasiado */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03); /* Sombra muy suave */
     text-align: center;
 }
 
@@ -217,82 +218,62 @@ main{
     text-align: left;
     font-family: 'Shrikhand', cursive;
     color: var(--rosa-fuerte);
-    border-left: 6px solid var(--coral-boton);
+    border-left: 6px solid var(--coral-boton); /* Pone una barrita de color a la izquierda */
     padding-left: 1rem;
 }
 
 .productos {
     background-color: hsl(277 73 88);
     padding: 5px;
-    border: 0 solid black;
 }
-.productos h4{
+
+.productos h4 {
     font-family: 'Shrikhand', cursive;
     color: black;
     text-align: center;
-    margin-bottom: 1rem;
     font-size: 25px;
 }
 
-.negocio{
+.negocio {
     background-color: hsl(277 73 88);
     padding: 1rem;
-    border: 1px solid black;  /*borde   */
-    text-align: center;         /*alianiacion del texto */
-    border-radius: 15px;        /*radio del borde*/
+    border: 1px solid black; /* Borde negro fino */
+    text-align: center;
+    border-radius: 15px;
     margin: 1rem auto;  
     max-width: 550px;
 }
 
 .logos {
-  display: flex;
-  flex-direction: row;        /* ya es el valor por defecto, */
-  gap: 10px;                  /* espacio entre  la imágenes */
-  justify-content: center;    /* centrar horizontalmente */
-  align-items: center;        /* centrar verticalmente */
-  flex-wrap: wrap;            /* si no caben, bajan a otra fila  */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .logos img {
-  width: 400px;               /* ajusta según necesites */
-  height: auto;               /*altura*/
-  object-fit: contain;
-}
-
-footer {
-  background-color: hsl(277 73 88); /*color del fondo*/
-  padding: 3rem 8%;
-  margin-top: 4rem;
-  font-size: 16px;
-}
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-.contacto h4 {
-  font-family: 'Shrikhand', cursive;  /* fuente de texto */
-  color: purple;
-  text-align: center;
-  font-size: 30px;
-}
-
-.icono-contacto {
-    width: 30px;
+    width: 400px;
     height: auto;
-    transition: transform 0.3s;
+    object-fit: contain;
 }
 
-.icono-contacto:hover {
-    transform: scale(1.1);
+/* --- PIE DE PÁGINA --- */
+footer {
+    background-color: hsl(277 73 88);
+    padding: 3rem 8%;
+    margin-top: 4rem; /* Separa el footer del contenido de arriba */
+    font-size: 16px;
 }
 
-.contacto-item {
+.footer-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 1rem;
+    justify-content: space-between; /* Separa los elementos del footer */
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
+.contacto h4 {
+    font-family: 'Shrikhand', cursive;
+    color: var(--rosa-fuerte);
+}
