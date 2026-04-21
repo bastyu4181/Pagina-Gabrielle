@@ -10,7 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: hsl(277 73 88);
     color: var(--texto-principal);
     overflow-x: hidden;
 }
@@ -199,36 +199,79 @@ nav {
         .btn { width: 100%; box-sizing: border-box; }
         }
 
-.Historia {
-    background-color: var(--rosa-fondo-logo);
-    padding: 5px;
+main{ 
+    background-color: hsl(277 73 88)}
+
+.Historia,.mision {
+    font-size: 18px;
+    background-color: var(--rosa-fondo-logo); 
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    text-align: center;
 }
 
-.Historia {
-    border: 3px azure solid ;
-    font-size: 20px;
-    text-align: center;
-    margin: 15px;
-        }
-
+.Historia h2, .mision h2 {
+    text-align: left;
+    font-family: 'Shrikhand', cursive;
+    color: var(--rosa-fuerte);
+    border-left: 6px solid var(--coral-boton);
+    padding-left: 1rem;
+}
 
 .productos {
-    background-color: lightsteelblue;
+    background-color: hsl(277 73 88);
     padding: 5px;
-    border: 1px solid black;
+    border: 0 solid black;
 }
-
-.banner{
-    background-color: rgb(161, 173, 187);
-    padding: auto;
-    border: 1px solid black;
+.productos h4{
+    font-family: 'Shrikhand', cursive;
+    color: black;
     text-align: center;
+    margin-bottom: 1rem;
+    font-size: 25px;
 }
 
+.negocio{
+    background-color: hsl(277 73 88);
+    padding: 1rem;
+    border: 1px solid black;  /*borde   */
+    text-align: center;         /*alianiacion del texto */
+    border-radius: 15px;        /*radio del borde*/
+    margin: 1rem auto;  
+    max-width: 550px;
+}
 
-.mision {
-    background-color: var(--rosa-fuerte);
-    font-size: auto;
-    padding: 5px;
-    border: 3px solid purple;
+.logos {
+  display: flex;
+  flex-direction: row;        /* ya es el valor por defecto, */
+  gap: 10px;                  /* espacio entre  la imágenes */
+  justify-content: center;    /* centrar horizontalmente */
+  align-items: center;        /* centrar verticalmente */
+  flex-wrap: wrap;            /* si no caben, bajan a otra fila  */
+}
+
+.logos img {
+  width: 400px;               /* ajusta según necesites */
+  height: auto;               /*altura*/
+  object-fit: contain;
+}
+
+footer {
+  background-color: hsl(277 73 88); /*color del fondo*/
+  padding: 3rem 8%;
+  margin-top: 4rem;
+  font-size: 16px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.contacto h4 {
+  font-family: 'Shrikhand', cursive;  /* fuente de texto */
+  color: var(--rosa-fuerte);
 }
