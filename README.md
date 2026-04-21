@@ -12,9 +12,14 @@ Emprendimiento de Pagina Web para Gabrielle
   R: La necesidad identificada es una pagina web para la compra del arte de "gabrielle" donde se puede identificar que tipo de arte quiere, que es lo que quiere en el arte y cuanto esta dispuesto a pagar
 
 4.	Listado de secciones que tendrá el sitio web.
- R: 
+ R: Barra de navegación: Home, Proyectos, Sobre mí, Contacto
+ R: Presentación: Logo personal animado,Título de bienvenida,Descripción profesiona,Botones: Ver Portafolio y Cotizar Trabajo
+ R: Historia: Relato personal sobre los inicios y motivación en el diseño
+ R: Misión :Propuesta de valor y enfoque creativo
+ R: Empresas con las que he trabajado: Logos de clientes
+ R: Contactos:
 
-5.  Integrantes del grupo con sus respectivos roles
+6.  Integrantes del grupo con sus respectivos roles
  R: Bastian Toledo: se encargo de 
  Header / Navegación 
  Hero / Banner principal
