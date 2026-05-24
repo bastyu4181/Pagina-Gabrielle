@@ -16,3 +16,26 @@ function cargarFavoritos() {
     renderizarFavoritosModal();
     renderizarTarjetas();
 }
+
+function guardarFavoritos() {
+    localStorage.setItem("misFavoritosPortfolio", JSON.stringify(favoritosIds));
+}
+
+function toggleFavorito(id) {
+    if (favoritosIds.includes(id)) {
+        favoritosIds = favoritosIds.filter(favId => favId !== id);
+    } else {
+        favoritosIds.push(id);
+    }
+    guardarFavoritos();
+    actualizarContadores();
+    renderizarTarjetas();
+    renderizarFavoritosModal();
+}
+
+function actualizarContadores() {
+    const contadorHeader = document.getElementById("favCounter");
+    const contadorModal = document.getElementById("modalTotalFav");
+    if (contadorHeader) contadorHeader.textContent = favoritosIds.length;
+    if (contadorModal) contadorModal.textContent = favoritosIds.length;
+}
