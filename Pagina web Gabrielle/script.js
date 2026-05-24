@@ -6,3 +6,13 @@ const proyectosData = [
     { id: 5, nombre: "Gastro Perú Branding", categoria: "Branding", descripcion: "Logotipo restaurante", imagen: "assets/gastro peru.png" },
     { id: 6, nombre: "JCM Salud Visual", categoria: "Social Media", descripcion: "Publicaciones clínica", imagen: "assets/jcm.jpg" }
 ];
+
+let favoritosIds = [];
+
+function cargarFavoritos() {
+    const guardados = localStorage.getItem("misFavoritosPortfolio");
+    favoritosIds = guardados ? JSON.parse(guardados) : [];
+    actualizarContadores();
+    renderizarFavoritosModal();
+    renderizarTarjetas();
+}
