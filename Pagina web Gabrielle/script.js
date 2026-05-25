@@ -1,4 +1,4 @@
-// ==================== DATOS DE PROYECTOS (ARRAY DE OBJETOS) ====================
+//datos proyecto
 const proyectosData = [
     { id: 1, nombre: "Branding Alma Mentorías", categoria: "Branding", descripcion: "Identidad visual completa", imagen: "assets/alma.jpg" },
     { id: 2, nombre: "Ilustración Pulpo", categoria: "Ilustración", descripcion: "Diseño creativo", imagen: "assets/Pulpo.jpg" },
@@ -8,7 +8,7 @@ const proyectosData = [
     { id: 6, nombre: "JCM Salud Visual", categoria: "Social Media", descripcion: "Publicaciones clínica", imagen: "assets/jcm.jpg" }
 ];
 
-// ==================== ESTADO FAVORITOS ====================
+// Estado favoritos
 let favoritosIds = [];
 
 // Cargar desde localStorage
@@ -43,7 +43,7 @@ function actualizarContadores() {
     if (contadorModal) contadorModal.textContent = favoritosIds.length;
 }
 
-// ==================== RENDERIZAR TARJETAS (CON FILTRO) ====================
+// Renderizar tarjetas
 let filtroActual = "";
 
 function renderizarTarjetas() {
@@ -88,7 +88,7 @@ function escapeHtml(str) {
     return div.innerHTML;
 }
 
-// ==================== VENTANA EMERGENTE (MODAL) DE FAVORITOS ====================
+// Ventana emergente de favoritos
 const modal = document.getElementById("favModal");
 const openModalBtn = document.getElementById("openFavModalBtn");
 const closeModalBtn = document.getElementById("closeModalBtn");
@@ -119,7 +119,7 @@ function renderizarFavoritosModal() {
     });
 }
 
-// Accesibilidad: gestión de foco y ARIA en el modal
+// gestión de foco y ARIA en el modal
 function abrirModal() {
     modal.style.display = "flex";
     modal.setAttribute("aria-hidden", "false");
@@ -142,7 +142,7 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.style.display === "flex") cerrarModal();
 });
 
-// ==================== MENÚ HAMBURGUESA CON ACCESIBILIDAD ====================
+// Menu Hamburgesa
 const hamburger = document.getElementById("hamburgerBtn");
 const navLinks = document.getElementById("navLinks");
 if (hamburger && navLinks) {
@@ -165,7 +165,7 @@ if (hamburger && navLinks) {
     });
 }
 
-// ==================== MODO OSCURO CON LOCALSTORAGE ====================
+// Modo oscuro con local storage
 const darkToggleBtn = document.getElementById("darkModeToggle");
 if (darkToggleBtn) {
     const modoActual = localStorage.getItem("darkModePortfolio") === "true";
@@ -179,7 +179,7 @@ if (darkToggleBtn) {
     });
 }
 
-// ==================== FILTRO EN TIEMPO REAL ====================
+// Filtro en tiempo real
 const filterInput = document.getElementById("filterInput");
 if (filterInput) {
     filterInput.addEventListener("input", (e) => {
