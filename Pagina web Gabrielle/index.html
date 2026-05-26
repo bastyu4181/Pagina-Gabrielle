@@ -67,20 +67,6 @@
 
 </main>
 
-<!-- Ventana Favoritos -->
-<div id="favModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 id="modalTitle">❤️ Mis proyectos favoritos</h2>
-            <button id="closeModalBtn" class="close-modal" aria-label="Cerrar lista de favoritos">✖</button>
-        </div>
-        <div id="favoritesListContainer" class="favorites-list">
-            <!-- Lista dinámica -->
-        </div>
-        <p class="total-fav">Total: <span id="modalTotalFav">0</span></p>
-    </div>
-</div>
-
 <div id="favModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-content">
         <div class="modal-header">
@@ -104,9 +90,26 @@
             <img src="assets/jcm.jpg" alt="JCM">
             <img src="assets/digevo.jpg" alt="Digevo">
         </div>
-    </section>
     <section class="contacto" id="contacto">
         <h4>Formas de contacto</h4>
+        
+        <form id="form-contacto" class="contacto-form">
+            <div class="campo">
+                <input type="text" id="nombreInput" placeholder="Tu Nombre" aria-label="Tu Nombre">
+                <span id="errorNombre" class="error-msg"></span>
+            </div>
+            <div class="campo">
+                <input type="email" id="emailInput" placeholder="Tu Correo" aria-label="Tu Correo">
+                <span id="errorEmail" class="error-msg"></span>
+            </div>
+            <div class="campo">
+                <textarea id="mensajeInput" placeholder="Cuéntame sobre tu proyecto..." aria-label="Mensaje"></textarea>
+                <span id="errorMensaje" class="error-msg"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            <div id="mensajeExito" class="exito-msg"></div>
+        </form>
+
         <div class="contacto-item">
             <img src="assets/instagram_PNG10.png" alt="Instagram" class="icono-contacto">
             <a href="https://www.instagram.com/necobah" target="_blank">@necobah</a>
