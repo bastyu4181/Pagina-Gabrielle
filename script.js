@@ -187,7 +187,7 @@ if (filterInput) {
         renderizarTarjetas();
     });
 }
-// VALIDACIÓN DE FORMULARIO 
+// Validacion de formulario
 const formContacto = document.getElementById("form-contacto");
 
 if (formContacto) {
@@ -196,7 +196,7 @@ if (formContacto) {
 
         let esValido = true;
         
-        // Elementos
+// Elementos
         const inputNombre = document.getElementById("nombreInput");
         const inputEmail = document.getElementById("emailInput");
         const inputMensaje = document.getElementById("mensajeInput");
@@ -206,7 +206,7 @@ if (formContacto) {
         const errorMensaje = document.getElementById("errorMensaje");
         const mensajeExito = document.getElementById("mensajeExito");
 
-        // 1. Validar Nombre
+// 1. Validar Nombre
         if (inputNombre.value.trim().length < 3) {
             errorNombre.textContent = "El nombre debe tener al menos 3 caracteres.";
             esValido = false;
@@ -214,7 +214,7 @@ if (formContacto) {
             errorNombre.textContent = "";
         }
 
-        // 2. Validar Email con Expresión Regular
+ // 2. Validar Email con Expresión Regular
         const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!regexEmail.test(inputEmail.value.trim())) {
             errorEmail.textContent = "Ingresa un correo válido (ej: nombre@correo.com).";
@@ -223,7 +223,7 @@ if (formContacto) {
             errorEmail.textContent = "";
         }
 
-        // 3. Validar Mensaje
+// 3. Validar Mensaje
         if (inputMensaje.value.trim().length < 10) {
             errorMensaje.textContent = "El mensaje debe tener al menos 10 caracteres.";
             esValido = false;
@@ -231,16 +231,36 @@ if (formContacto) {
             errorMensaje.textContent = "";
         }
 
-        // 4. Sanitización y Envío Exitoso
-        if (esValido) {
-            mensajeExito.textContent = `¡Gracias por tu mensaje, ${inputNombre.value.trim()}! Te contactaré pronto.`;
-            mensajeExito.style.display = "block";
-            formContacto.reset(); // Limpia los campos
+// 4. Sanitización y Envío Exitoso
+    if (esValido) {
             
-            // Ocultar mensaje de éxito después de 4 segundos
-            setTimeout(() => { mensajeExito.style.display = "none"; }, 4000);
-        } else {
-            mensajeExito.style.display = "none";
+// 1. Crear un objeto con los datos del nuevo mensaje
+        const nuevoMensaje = {
+            nombre: inputNombre.value.trim(),
+            correo: inputEmail.value.trim(),
+            mensaje: inputMensaje.value.trim(),
+            fecha: new Date().toLocaleString() // Guarda la fecha y hora exacta
+            };
+
+// 2. Traer los mensajes anteriores que ya estén guardados 
+        const guardados = localStorage.getItem("mensajesContacto");
+        let historialMensajes = guardados ? JSON.parse(guardados) : [];
+
+// 3. Agregar el nuevo mensaje a la lista
+        historialMensajes.push(nuevoMensaje);
+
+// 4. Volver a guardar la lista actualizada en el localStorage
+        localStorage.setItem("mensajesContacto", JSON.stringify(historialMensajes));
+            
+
+        mensajeExito.textContent = `¡Gracias por tu mensaje, ${inputNombre.value.trim()}! Te contactaré pronto.`;
+        mensajeExito.style.display = "block";
+        formContacto.reset(); // Limpia los campos
+            
+// Ocultar mensaje de éxito después de 4 segundos
+        setTimeout(() => { mensajeExito.style.display = "none"; }, 4000);
+    } else {
+        mensajeExito.style.display = "none";
         }
     });
 }
