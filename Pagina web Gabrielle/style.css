@@ -446,3 +446,44 @@ footer {
     }
     .nav-links.open { left: 0; }
 }
+/* FORMULARIO DE CONTACTO */
+.contacto-form {
+    max-width: 500px;
+    margin: 0 auto 2rem auto;
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+    text-align: left;
+}
+.campo {
+    margin-bottom: 1.5rem;
+}
+.campo input, .campo textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background-color: var(--bg-general);
+    color: var(--texto-principal);
+    font-family: 'Poppins', sans-serif;
+}
+.campo textarea {
+    height: 100px;
+    resize: none;
+}
+.error-msg {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+}
+.exito-msg {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 15px;
+    text-align: center;
+    display: none;
+}
