@@ -187,7 +187,64 @@ if (filterInput) {
         renderizarTarjetas();
     });
 }
+// VALIDACIÓN DE FORMULARIO 
+const formContacto = document.getElementById("form-contacto");
 
-// ==================== INICIALIZAR ====================
+if (formContacto) {
+    formContacto.addEventListener("submit", (e) => {
+        e.preventDefault(); // Evita que la página recargue
+
+        let esValido = true;
+        
+        // Elementos
+        const inputNombre = document.getElementById("nombreInput");
+        const inputEmail = document.getElementById("emailInput");
+        const inputMensaje = document.getElementById("mensajeInput");
+        
+        const errorNombre = document.getElementById("errorNombre");
+        const errorEmail = document.getElementById("errorEmail");
+        const errorMensaje = document.getElementById("errorMensaje");
+        const mensajeExito = document.getElementById("mensajeExito");
+
+        // 1. Validar Nombre
+        if (inputNombre.value.trim().length < 3) {
+            errorNombre.textContent = "El nombre debe tener al menos 3 caracteres.";
+            esValido = false;
+        } else {
+            errorNombre.textContent = "";
+        }
+
+        // 2. Validar Email con Expresión Regular
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regexEmail.test(inputEmail.value.trim())) {
+            errorEmail.textContent = "Ingresa un correo válido (ej: nombre@correo.com).";
+            esValido = false;
+        } else {
+            errorEmail.textContent = "";
+        }
+
+        // 3. Validar Mensaje
+        if (inputMensaje.value.trim().length < 10) {
+            errorMensaje.textContent = "El mensaje debe tener al menos 10 caracteres.";
+            esValido = false;
+        } else {
+            errorMensaje.textContent = "";
+        }
+
+        // 4. Sanitización y Envío Exitoso
+        if (esValido) {
+            mensajeExito.textContent = `¡Gracias por tu mensaje, ${inputNombre.value.trim()}! Te contactaré pronto.`;
+            mensajeExito.style.display = "block";
+            formContacto.reset(); // Limpia los campos
+            
+            // Ocultar mensaje de éxito después de 4 segundos
+            setTimeout(() => { mensajeExito.style.display = "none"; }, 4000);
+        } else {
+            mensajeExito.style.display = "none";
+        }
+    });
+}
+
+// ==================== INICIALIZAR 
 cargarFavoritos();
 renderizarTarjetas();
